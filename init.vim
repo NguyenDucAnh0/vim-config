@@ -37,6 +37,17 @@ Plug 'prettier/vim-prettier'
 "TypeScript + JSX support
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+
+"stuff (idk what it does)
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main'  }
+Plug 'jparise/vim-graphql'
+
+"vim game
+Plug 'ThePrimeagen/vim-be-good'
+"(run by :VimBeGood)
 call plug#end()
 
 set noerrorbells
@@ -81,7 +92,7 @@ let g:airline#extensions#tabline#enabled = 1
 "indent line
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 "disable autoindent
-"let g:polyglot_disabled = ['autoindent']
+let g:polyglot_disabled = ['autoindent']
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -128,4 +139,15 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit'
   \}
+
+"COC
+" coc config
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-eslint', 
+  \ 'coc-prettier', 
+  \ 'coc-json', 
+  \ ]
 
