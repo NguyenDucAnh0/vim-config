@@ -30,6 +30,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "file finding
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'stsewd/fzf-checkout.vim'
 
 "auto format
 Plug 'prettier/vim-prettier'
@@ -45,12 +46,12 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main'  }
 Plug 'jparise/vim-graphql'
 
-"vim game
-Plug 'ThePrimeagen/vim-be-good'
-"(run by :VimBeGood)
+"Git Commands
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 set noerrorbells
+set incsearch
 set nohlsearch
 set hls
 set is
@@ -71,6 +72,9 @@ set expandtab
 set smartindent 
 set autoindent
 set ruler
+"setup backup dir
+set nobackup
+
 "stuff
 set cursorline
 autocmd FileType cpp nnoremap <F4> :!g++ -g --std=c++14 % -o %:r<CR>
@@ -78,10 +82,6 @@ autocmd FileType cpp nnoremap <F5> :!./%:r<CR>
 
 
 "SET Up PLUGINS
-"nerd tree
-map <C-n> :NERDTreeToggle<CR>
-"undo tree 
-map <C-u> :UndotreeToggle <CR>
 "set encoding
 set encoding=UTF-8
 
@@ -132,13 +132,6 @@ if exists('+termguicolors')
 endif
 let g:gruvbox_invert_selection='0'
 colorscheme gruvbox-material
-"FZF
-nnoremap <C-p> :FZF<CR>
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit'
-  \}
 
 "COC
 " coc config
@@ -150,4 +143,20 @@ let g:coc_global_extensions = [
   \ 'coc-prettier', 
   \ 'coc-json', 
   \ ]
+"Mapping Keys
+let mapleader = ' '
+"Split Navigation
+"
+"FZF remap
+nnoremap <leader>p :FZF<CR>
+let g:fzf_action = {
+  \ 'alt-t': 'tab split',
+  \ 'alt-s': 'split',
+  \ 'alt-v': 'vsplit'
+  \}
+"nerd tree
+map <leader>n :NERDTreeToggle<CR>
+"undo tree 
+map <leader>u :UndotreeToggle <CR>
+
 
