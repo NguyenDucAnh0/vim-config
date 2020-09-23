@@ -1,5 +1,5 @@
 syntax on
-
+"PLUGINS
 call plug#begin('~/.config/nvim/autoload/plugged')
 "indent & indent line
 Plug 'jiangmiao/auto-pairs'
@@ -50,6 +50,10 @@ Plug 'jparise/vim-graphql'
 Plug 'tpope/vim-fugitive'
 call plug#end()
 
+
+
+"SET STUFF
+set updatetime=50
 set noerrorbells
 set incsearch
 set nohlsearch
@@ -81,7 +85,6 @@ autocmd FileType cpp nnoremap <F4> :!g++ -g --std=c++14 % -o %:r<CR>
 autocmd FileType cpp nnoremap <F5> :!./%:r<CR>
 
 
-"SET Up PLUGINS
 "set encoding
 set encoding=UTF-8
 
@@ -145,18 +148,30 @@ let g:coc_global_extensions = [
   \ ]
 "Mapping Keys
 let mapleader = ' '
+
+"Split
+nnoremap <leader>sv :wincmd v<CR>
+nnoremap <leader>sh :wincmd s<CR>
+
 "Split Navigation
-"
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>l :wincmd l<CR>
+
 "FZF remap
 nnoremap <leader>p :FZF<CR>
 let g:fzf_action = {
-  \ 'alt-t': 'tab split',
-  \ 'alt-s': 'split',
-  \ 'alt-v': 'vsplit'
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit'
   \}
+
 "nerd tree
 map <leader>n :NERDTreeToggle<CR>
+
 "undo tree 
 map <leader>u :UndotreeToggle <CR>
 
-
+"Fugitive (git)
+nmap <leader>gs :G<CR>
