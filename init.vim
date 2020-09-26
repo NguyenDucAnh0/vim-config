@@ -146,6 +146,7 @@ let g:coc_global_extensions = [
   \ 'coc-prettier', 
   \ 'coc-json', 
   \ ]
+
 "Mapping Keys
 let mapleader = ' '
 
