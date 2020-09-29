@@ -5,14 +5,21 @@
     "typescriptreact",
     "json",
     "javascriptreact",
-    "typescript.tsx"
+    "typescript.tsx",
+    "html",
+    "c++",
+    "python",
+    "css"
   ],
   "eslint.filetypes": [
+    "python",
     "javascript",
     "typescript",
     "typescriptreact",
     "javascriptreact",
+    "json",
+    "css",
     "typescript.tsx"
   ],
-  "coc.preferences.diagnostic.virtualText": true
+  "clangd.path": "/home/brian/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd"
 }
