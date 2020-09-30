@@ -78,12 +78,16 @@ set autoindent
 set ruler
 "setup backup dir
 set nobackup
+"path stuff idk what it does
+set sessionoptions+=globals
+
+
 
 "stuff
 set cursorline
 autocmd FileType cpp nnoremap <F4> :!g++ -g --std=c++14 % -o %:r<CR>
 autocmd FileType cpp nnoremap <F5> :!./%:r<CR>
-
+autocmd FileType python let b:coc_root_patterns = ['.git', '.env']
 
 "set encoding
 set encoding=UTF-8
